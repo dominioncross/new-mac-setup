@@ -1,6 +1,7 @@
-# new-mac-setup
+# New-mac-setup
 
 #### To setup the new Mac, please follow the the steps below.
+-----------------
 
 1. Clone the repo and Go the folder
 
@@ -92,9 +93,8 @@ Finished in 2.06 seconds (files took 8.52 seconds to load)
 Randomized with seed 15786
 ```
 If the test gets finished with 0 failures. Then all is good!
-
+## The next step is to setup the database.
 --------------------------------
-### The next step is to setup the database.
 
 15. Run `gcloud init`
 
@@ -117,10 +117,8 @@ The repo `tmp` now should have all the dbs. They can be checked at
 affiliates	highstreet	tarmac
 forklift	padlock		wholesale
 ```
-
---------------------------------
-
-### The next step is to restore databases locally.
+## The next step is to restore databases locally.
+-----------------
 
 22. Run `mongorestore --drop dump/forklift --db forklift`
 
@@ -134,19 +132,23 @@ forklift	padlock		wholesale
 
 This will restore all the databases.
 
+## The next step is to setup a development server links via puma-dev 
 ----------------------------------------------------------------
-### The next step is to setup a development server links via puma-dev to to run the app on the browser
-for example, to setup the wholesale app,
+This will run the app on the browser. For example, to setup the wholesale app,
 
-27. `cd ~/Code/dcross/wholesale`
-28. `bundle install`
-29. `cd ~/Code/dcross`
-30. `puma-dev link -n dcross-wholesale wholesale`
+27. `puma-dev --install -d test`
+
+this will install `.test` TLD. The default TLD of puma-dev is `.dev`, which is a reserved TLD.
+
+28. `cd ~/Code/dcross/wholesale`
+29. `bundle install`
+30. `cd ~/Code/dcross`
+31. `puma-dev link -n dcross-wholesale wholesale`
 
 The above steps will give the URL `https://dcross-wholesale.dev/`. This will run the app on the puma-dev server. Do this for each app to setup link.
 
+## Install mysql for warehouse application
 ----------------------------------------------------------------
-### Install mysql for warehouse application
 
 1. run `chmod +x mysql.sh`
 2. run `./mysql.sh`
