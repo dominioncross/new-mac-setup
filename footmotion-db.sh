@@ -18,4 +18,4 @@ do
 done
 echo "############ Restore Complete: `date`"
 rm -rf dump
-cd ~/
+cd ~
