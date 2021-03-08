@@ -131,6 +131,7 @@ forklift	padlock		wholesale
 26. Run `mongorestore --drop dump/wholesale --db wholesale`
 
 This will restore all the databases. To update the database locally, run steps 18-26 and remove the repo `dump`
+Update the password as this will reset the password to cloud default.
 
 ## The next step is to setup a development server links via puma-dev 
 ----------------------------------------------------------------
